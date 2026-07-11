@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Photobooth</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="app">
+
+  <!-- WELCOME -->
+  <section class="screen" id="screen-welcome" data-active="true">
+    <h1 class="title">WELCOME TO<br/>THE PHOTOBOOTH</h1>
+    <p class="hint"><kbd>SPACE</kbd> to begin</p>
+  </section>
+
+  <!-- CAMERA / COUNTDOWN -->
+  <section class="screen" id="screen-camera">
+    <div class="camera-wrap">
+      <video id="video" autoplay playsinline muted></video>
+      <div class="flash" id="flash"></div>
+      <div class="countdown" id="countdown"></div>
+    </div>
+    <p class="hint" id="camera-hint"><kbd>SPACE</kbd> to click</p>
+  </section>
+
+  <!-- BUILDING -->
+  <section class="screen" id="screen-building">
+    <div class="spinner"></div>
+    <p class="hint">developing your photos&hellip;</p>
+  </section>
+
+  <!-- SONG INPUT -->
+  <section class="screen" id="screen-song">
+    <div class="strip-preview"><img id="strip-img-song" alt="Your photostrip" /></div>
+    <form id="song-form" class="input-row">
+      <input id="song-input" type="text" placeholder="What song should we play?" autocomplete="off" maxlength="60" required />
+      <button type="submit">Add song</button>
+    </form>
+  </section>
+
+  <!-- PREVIEW + EMAIL -->
+  <section class="screen" id="screen-preview">
+    <div class="strip-preview"><img id="strip-img-final" alt="Your photostrip" /></div>
+    <form id="email-form" class="input-row">
+      <input id="email-input" type="email" placeholder="you@example.com" autocomplete="email" required />
+      <button type="submit">Email &amp; print</button>
+    </form>
+  </section>
+
+  <!-- SENDING -->
+  <section class="screen" id="screen-sending">
+    <div class="spinner"></div>
+    <p class="hint">sending your photostrip&hellip;</p>
+  </section>
+
+  <!-- DONE -->
+  <section class="screen" id="screen-done">
+    <h2 class="title small">ALL DONE!</h2>
+    <p class="hint" id="done-message">Check your inbox — your strip is on its way to the printer too.</p>
+    <button id="restart-btn" type="button">Start over</button>
+  </section>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
